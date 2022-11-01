@@ -1,1 +1,44 @@
-<p>vendorlist works!</p>
+<div>
+    <!-- <div class="row text-center container">
+        <div class="col-md-2">
+            <button class="btn btn-primary">Add Employee</button>
+        </div>
+        <div class="col-md-10">
+            <h1 class="display-6">List Of Employees</h1>
+        </div>
+    </div> -->
+
+
+
+    <hr>
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Vendor Name</th>
+                    <th>Vendor Type</th>
+                    <th>Asset Type</th>
+                    <th>Valid From</th>
+                    <th>Valid To</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vendor of this.vendorService.vendors">
+                    <td>{{vendor.vendorId}}</td>
+                    <td>{{vendor.vendorName}}</td>
+                    <td>{{vendor.vendorType.vendorTypeName}}</td>
+                    <td>{{vendor.assetType.assetTypeName}}</td>
+                    <td>{{vendor.validFrom}}</td>
+                    <td>{{vendor.validTo}}</td>
+                    <td>{{vendor.address}}</td>
+                    <td><button class="btn btn-warning" (click)="populateForm(employee)"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn btn-danger" (click)="deleteEmployee(employee)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

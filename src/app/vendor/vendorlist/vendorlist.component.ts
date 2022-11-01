@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VendorService } from 'src/app/shared/vendor.service'
 
 @Component({
   selector: 'app-vendorlist',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(public vendorService : VendorService) { }
 
   ngOnInit(): void {
+    this.vendorService.bindAllVendors();
+
   }
 
 }
