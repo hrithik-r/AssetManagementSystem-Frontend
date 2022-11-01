@@ -12,5 +12,7 @@ export class Vendor {
     validTo : Date;
     address : string;
     active : boolean;
+    createdTime : Date;
+    lastUpdate : Date;
 
 }

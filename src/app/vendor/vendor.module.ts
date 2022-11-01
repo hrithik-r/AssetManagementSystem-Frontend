@@ -5,6 +5,7 @@ import { VendorlistComponent } from './vendorlist/vendorlist.component';
 import { VendorentryComponent } from './vendorentry/vendorentry.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     BrowserModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class VendorModule { }
