@@ -33,6 +33,7 @@ export class VendorlistComponent implements OnInit {
     if(userWish == true){
       console.log("Deleting vendor permenently");
       this.vendorService.deleteVendor(vendor.vendorId);
+      this.vendorService.bindAllVendors();
       
     }
     else{

@@ -7,8 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({ 
   declarations: [VendorComponent, VendorlistComponent, VendorentryComponent],
   imports: [

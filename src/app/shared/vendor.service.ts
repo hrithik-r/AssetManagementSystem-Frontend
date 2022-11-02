@@ -21,7 +21,7 @@ export class VendorService {
 
   totalVendors : number = 0;
 
-  sortedVendors : Vendor[];
+  sortedVendors : Vendor[] = [];
 
 
   constructor(private httpClient : HttpClient) { }
@@ -79,6 +79,8 @@ export class VendorService {
   
 
   addVendor(vendor : Vendor) : Observable<any>{
+    vendor.createdTime = new Date;
+    vendor.lastUpdate = new Date;
     return this.httpClient.post(environment.apiVendor , vendor);
   }
 
@@ -87,7 +89,10 @@ export class VendorService {
   }
 
   deleteVendor(vendorId : number) : Observable<any>{
-    return this.httpClient.delete(environment.apiVendor + 'delete/' + vendorId);
+    console.log(vendorId);
+    console.log(environment.apiVendor + 'delete/' + vendorId);
+    
+    return this.httpClient.delete('http://localhost:9001/api/vendor/delete/' + vendorId);
   }
 
 
