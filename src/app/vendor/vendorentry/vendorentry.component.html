@@ -22,13 +22,13 @@
             <!-- vendor type -->
             <div class="form-group my-2">
                 <label for="">Vendor Type</label>
-                <select class="form-select" name="vendorTypeID" #vendorTypeID="ngModel" required 
-                    [(ngModel)] = "vendorService.formVendorData.vendorType" [ngClass] = "{'is-invalid' : vendorTypeID.touched && vendorTypeID.invalid}">
+                <select class="form-select" name="vendorTypeId" #vendorTypeId="ngModel" required 
+                    [(ngModel)] = "vendorService.formVendorData.vendorType" [ngClass] = "{'is-invalid' : vendorTypeId.touched && vendorTypeId.invalid}">
                     <option selected disabled value="0">Select Vendor Type</option>
-                    <option *ngFor="let vendortype of vendorService.vendorTypes" value="{{vendortype.vendorTypeId}}">{{vendortype.vendorTypeName}}</option>
+                    <option *ngFor="let vendorType of vendorService.vendorTypes" value="{{vendorType.vendorTypeId}}">{{vendorType.vendorTypeName}}</option>
                 </select>
-                <div class="validation-error" *ngIf="vendorTypeID.touched && vendorTypeID.invalid">
-                    <div class="text-danger" *ngIf="vendorTypeID.errors.required">
+                <div class="validation-error" *ngIf="vendorTypeId.touched && vendorTypeId.invalid">
+                    <div class="text-danger" *ngIf="vendorTypeId.errors.required">
                         Vendor Type should not be Empty
                    </div> 
                 </div>
@@ -38,13 +38,13 @@
             <!-- asset type -->
             <div class="form-group my-2">
                 <label for="">Asset Type</label>
-                <select class="form-select" name="assetType" #assetType="ngModel" required 
-                    [(ngModel)] = "vendorService.formVendorData.assetType" [ngClass] = "{'is-invalid' : assetType.touched && assetType.invalid}">
+                <select class="form-select" name="assetTypeId" #assetTypeId="ngModel" required 
+                    [(ngModel)] = "vendorService.formVendorData.assetType" [ngClass] = "{'is-invalid' : assetTypeId.touched && assetTypeId.invalid}">
                     <option selected disabled value="0">Select Asset Type</option>
                     <option *ngFor="let assetType of vendorService.assetTypes" value="{{assetType.assetTypeId}}">{{assetType.assetTypeName}}</option>
                 </select>
-                <div class="validation-error" *ngIf="assetType.touched && assetType.invalid">
-                    <div class="text-danger" *ngIf="assetType.errors.required">
+                <div class="validation-error" *ngIf="assetTypeId.touched && assetTypeId.invalid">
+                    <div class="text-danger" *ngIf="assetTypeId.errors.required">
                         Asset Type should not be Empty
                    </div> 
                 </div>
