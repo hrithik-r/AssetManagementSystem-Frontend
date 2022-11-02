@@ -1,0 +1,106 @@
+<!--aMModel"
+aMSerialNum
+aMMyYear
+purchDate
+aMWarranty
+warrantyFrom
+warrantyTo-->
+<h3><u>Add an asset</u></h3>
+<hr>
+<form >
+    <!--Asset id-->
+    <label for="assetId">Asset Id: </label>
+    <input type="text" name="assetId" class="form-control mb-3" placeholder="Asset Id" disabled>
+
+
+    <!-- Asset Type-->
+    <div class="form-floating mb-3">
+        <select class="form-select" id="assetType" aria-label="Floating label select example" required>
+            <option selected>Select Asset Type</option>
+            <option value="">Type 1</option>
+            <option value="">Type 2</option>
+            <option value="">Type 3</option>
+        </select>
+        <label for="assetType">Asset Type: </label>
+    </div>
+
+    <!--Asset Maker Id-->
+    <div class="form-floating mb-3">
+        <select class="form-select" id="makerType" aria-label="Floating label select example">
+            <option selected>Select Maker Id: </option>
+            <option value="">Maker Id: 2</option>
+            <option value="">Maker Id: 1</option>
+            <option value="">Maker Id: 3</option>
+        </select>
+        <label for="makerId">Maker Id: </label>
+    </div>
+
+    <!--Asset Definition Id -->
+    <div class="form-floating mb-3">
+        <select class="form-select" id="assetDef" aria-label="Floating label select example">
+            <option selected>Select Asset Definition Id: </option>
+            <option value="">Asset Def Id: 2</option>
+            <option value="">Asset Def Id: 1</option>
+            <option value="">Asset Def Id: 3</option>
+        </select>
+        <label for="assetDef">Def Id: </label>
+    </div>
+
+    <!--Asset Model-->
+    <div class="form-floating mb-3">
+        <input type="text" name="assetModel" class="form-control clr-error"
+         id="assetModel" placeholder="Asset Model" required
+         #aMModel="ngModel"
+        [ngClass]="{'is-invalid:assetModel.touched && assetModel.invalid'}">
+        <div class="validation-error" *ngIf="aMModel.touched && aMModel.invalid">
+            <div *ngIf="aMModel.errors.required">Model Name is required</div>
+            
+        </div>
+        <label for="assetModel">Enter Model: </label>
+    </div>
+
+    <!--Asset Serial Number-->
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="assetSrlNum" placeholder="Asset Model">
+        <label for="assetSrlNum">Enter Serial Number: </label>
+    </div>
+
+    <!--Asset Manufacture Year-->
+    <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="mfcYear" placeholder="Manufacture Year">
+        <label for="mfcYear">Manufacture Year: </label>
+    </div>
+
+    <!--Purchase Date-->
+    <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="purchDate" placeholder="Manufacture Year">
+        <label for="purchDate">Purchase Date: </label>
+    </div>
+
+    <!--Asset Warranty-->
+    <div class="row g-2">
+        <label >Warranty</label>
+        <div class="col-md">
+            <label for="fromDate">From: </label>
+            <input type="date" class="form-control" id="fromDate" placeholder="From">
+            
+        </div>
+        <div class="col-md">
+            <label for="toDate">To: </label>
+            <input type="date" class="form-control" id="toDate" placeholder="To">
+        
+        </div>
+    </div>
+
+    <br>
+    <!--Buttons-->
+    <div class="row g-2">
+
+        <button type="submit" class="btn btn-primary col-md">Submit</button>
+        &nbsp;
+        <button type="reset" class="btn btn-secondary col-md">Reset</button>
+
+    </div>
+</form>
+
+

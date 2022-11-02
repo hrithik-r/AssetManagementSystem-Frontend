@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common'
 import { PurchaseModule } from '../app/purchase/purchase.module'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,10 @@ import { PurchaseModule } from '../app/purchase/purchase.module'
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-<<<<<<< HEAD
     FormsModule,
-    AssetModule
-=======
+    AssetModule,
     PurchaseModule
->>>>>>> 51dc8e9caa50b1599675c9a818e6f5205a1e44e3
+
   ],
   providers: [],
   bootstrap: [AppComponent]
