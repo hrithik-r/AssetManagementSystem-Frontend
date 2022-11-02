@@ -15,13 +15,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UserListComponent } from './login/user-list/user-list.component';
+import { AssetDefinitionComponent } from './asset/asset-definition/asset-definition.component';
+import { AssetDefintionService } from './shared/asset-defintion.service';
 
 @NgModule({
   declarations: [
     AppComponent,,
     LoginComponent,
     RegisterComponent,
-    UserListComponent
+    UserListComponent,
+    AssetDefinitionComponent
   ],
   imports: [
     BrowserModule,
@@ -29,17 +32,15 @@ import { UserListComponent } from './login/user-list/user-list.component';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    AssetModule
-=======
-    PurchaseModule
->>>>>>> 51dc8e9caa50b1599675c9a818e6f5205a1e44e3,
+    AssetModule,
+    PurchaseModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgxPaginationModule,
     Ng2SearchPipeModule
   ],
-  providers: [AuthService, UserService],
+  providers: [AuthService, UserService, AssetDefintionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

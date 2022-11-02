@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'vendor', component:  VendorComponent},
   { path: 'vendorlist', component:  VendorlistComponent},
-  { path:'purchase', component:PurchaselistingComponent}
+  { path:'purchase', component:PurchaselistingComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'userlist', component: UserListComponent},

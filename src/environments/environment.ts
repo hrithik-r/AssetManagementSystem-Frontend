@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   apiUrl:'http://localhost:9001/api/',
   apiVendor:'http://localhost:9001/api/',
-  apiHrithik : "http://localhost:9001/api/"
+  apiHrithik : "http://localhost:9001/api/",
+  apiAssets: 'http://localhost:9001/api/'
 };
 
 /*

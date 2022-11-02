@@ -10,7 +10,7 @@ import { AssetDefinitionComponent } from './asset-definition/asset-definition.co
 
 
 @NgModule({
-  declarations: [AssetCreationComponentAssetDefinitionComponent],
+  declarations: [AssetCreationComponent,AssetDefinitionComponent],
   imports: [
     CommonModule,
     BrowserModule,
