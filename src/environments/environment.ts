@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiVendor : "http://localhost:9001/api/vendor/"
+  apiVendor : "http://localhost:9001/api/vendor/",
+  apiUrl:'http://localhost:9001/api/'
+
 };
 
 /*

@@ -1,1 +1,35 @@
-<p>purchaselisting works!</p>
+<div class="container m-3">
+    <div>
+        <h2 class="display-5">Purchase Order Listing</h2>
+        <hr>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Order id</th>
+            <th scope="col">Order No</th>
+            <th scope="col">Asset Type</th>
+            <th scope="col">Quantity</th>            
+            <th scope="col">Vendor Name</th>            
+            <th scope="col">Vendor Type</th>            
+            <th scope="col">Asset Type</th> 
+            <th scope="col">Valid From</th> 
+            <th scope="col">Valid To</th> 
+            <th scope="col">Address</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let purchase of purchaseService.purchases">
+            <td scope="row">1</td>
+            <td scope="row">1</td>
+            <td scope="row">1</td>
+            <td scope="row">1</td>
+            <td scope="row">1</td>
+            <td scope="row">1</td>
+            <td scope="row">1</td>
+            <td scope="row">1</td>
+            <td scope="row">1</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

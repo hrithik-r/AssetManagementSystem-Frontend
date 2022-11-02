@@ -6,8 +6,6 @@ import { VendorentryComponent } from './vendorentry/vendorentry.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
-
-
 @NgModule({ 
   declarations: [VendorComponent, VendorlistComponent, VendorentryComponent],
   imports: [
