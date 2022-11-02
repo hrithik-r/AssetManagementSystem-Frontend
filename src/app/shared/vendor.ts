@@ -4,15 +4,15 @@ import { VendorType } from "./vendor-type";
 export class Vendor {
     vendorId : number = 0;
     vendorName : string = "";
-    vendorTypeId : number;
+    vendorTypeId : number = 0;
     vendorType : VendorType;
-    assetTypeId : number;
+    assetTypeId : number = 0;
     assetType : AssetType;
     validFrom : Date;
     validTo : Date;
-    address : string;
-    active : boolean;
+    address : string = "";
     createdTime : Date;
     lastUpdate : Date;
+    active : boolean = false;
 
 }

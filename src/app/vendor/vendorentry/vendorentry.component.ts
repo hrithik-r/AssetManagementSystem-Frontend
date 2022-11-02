@@ -19,12 +19,13 @@ export class VendorentryComponent implements OnInit {
     if(insertId == 0 || insertId == null){
       console.log("adding the vendor");
       this.addVendor(form);
+      
     }
     else{
       console.log("updating vendor");
       this.updateVendor(form);
     }
-    this.router.navigateByUrl('vendorentry');
+    this.router.navigateByUrl('vendorlist');
   }
 
   ngOnInit(): void {
@@ -42,6 +43,7 @@ export class VendorentryComponent implements OnInit {
     }
     )
     this.vendorService.bindAllVendors();
+
   }
 
   updateVendor(form ?: NgForm){
