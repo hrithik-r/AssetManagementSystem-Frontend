@@ -1,0 +1,173 @@
+<h1 class="text-center">Welcome Admin</h1>
+
+
+<div class="container mt-5">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-dark shadow bg-light mb-3 mx-2">
+                    <div class="card-header text-center"><i class="fa-solid fa-user-tie"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-text text-center">{{this.vendorService.totalVendors}}</h3>
+                    <p class="card-title text-center">Total Vendors</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-dark shadow bg-light mb-3 mx-2">
+                    <div class="card-header text-center"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <div class="card-body">
+                        <!-- <h3 class="card-text text-center">{{this.requestService.totalLoan}}</h3> -->
+                    <p class="card-title text-center">Total Assets</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-dark shadow bg-light mb-3 mx-2">
+                    <div class="card-header text-center"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-text text-center">100</h3>
+                    <p class="card-title text-center">Total Purchased Orders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Recent vendors -->
+
+    <div class="row">
+        <div class="col-md-6">
+            
+            <div class="container  shadow" style="background-color: rgb(217, 241, 249);">
+                <div class="text-center">
+                    <a routerLink="/vendorentry" class="btn btn-outline-primary ">Add Vendor</a>
+                </div>
+                <h3 class="text-center m-3">Recent Added New Vendors</h3>
+                <div class="container" style="overflow-x: scroll;">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Vendor Name</th>
+                                <th>Vendor Type</th>
+                                <th>Asset Type</th>
+                                <th>Valid From</th>
+                                <th>Valid To</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let vendor of this.vendorService.sortedVendors">
+                                <td>{{vendor.vendorId}}</td>
+                                <td>{{vendor.vendorName}}</td>
+                                <td>{{vendor.vendorType.vendorTypeName}}</td>
+                                <td>{{vendor.assetType.assetTypeName}}</td>
+                                <td>{{vendor.validFrom}}</td>
+                                <td>{{vendor.validTo}}</td>
+                                <td>{{vendor.address}}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <a routerLink="/vendorlist" class="btn btn-outline-primary ">See All Vendors</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container mt-5 shadow" style="background-color: rgb(231, 252, 221);">
+                <h3 class="text-center m-3">Recent Added New Assets</h3>
+                <div class="container" style="overflow-x: scroll;">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Vendor Name</th>
+                                <th>Vendor Type</th>
+                                <th>Asset Type</th>
+                                <th>Valid From</th>
+                                <th>Valid To</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let vendor of this.vendorService.vendors">
+                                <td>{{vendor.vendorId}}</td>
+                                <td>{{vendor.vendorName}}</td>
+                                <td>{{vendor.vendorType.vendorTypeName}}</td>
+                                <td>{{vendor.assetType.assetTypeName}}</td>
+                                <td>{{vendor.validFrom}}</td>
+                                <td>{{vendor.validTo}}</td>
+                                <td>{{vendor.address}}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center">
+                    <a routerLink="/vendorlist" class="btn btn-outline-success ">See All Assets</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="m-5">
+
+    <!-- Recent vendors -->
+
+    <div class="container my-5">
+        <h3 class="text-center m-3">Recent Purchases</h3>
+        <div class="container" style="overflow-x: scroll;">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Vendor Name</th>
+                        <th>Vendor Type</th>
+                        <th>Asset Type</th>
+                        <th>Valid From</th>
+                        <th>Valid To</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let vendor of this.vendorService.vendors">
+                        <td>{{vendor.vendorId}}</td>
+                        <td>{{vendor.vendorName}}</td>
+                        <td>{{vendor.vendorType.vendorTypeName}}</td>
+                        <td>{{vendor.assetType.assetTypeName}}</td>
+                        <td>{{vendor.validFrom}}</td>
+                        <td>{{vendor.validTo}}</td>
+                        <td>{{vendor.address}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <a routerLink="/vendorlist" class="btn btn-outline-warning ">See All Purchases</a>
+        </div>
+    </div>
+
+    
+
+    <!-- <div class="container mt-5">
+        <h3 class="text-center">Requests</h3>
+        <app-requestlist></app-requestlist>
+    </div> -->
+
+
+
+    
+
+
+
+
+
+</div>

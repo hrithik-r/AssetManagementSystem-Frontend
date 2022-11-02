@@ -9,9 +9,10 @@
     </div> -->
 
 
+    <h1 class="text-center m-5">Vendors List</h1>
 
-    <hr>
-    <div class="container">
+    <!-- <hr> -->
+    <div class="container" style="overflow-x: scroll;">
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -34,8 +35,8 @@
                     <td>{{vendor.validFrom}}</td>
                     <td>{{vendor.validTo}}</td>
                     <td>{{vendor.address}}</td>
-                    <td><button class="btn btn-warning" (click)="populateForm(employee)"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btn btn-danger" (click)="deleteEmployee(employee)">Delete</button></td>
+                    <td><button class="btn btn-warning mx-1" (click)="populateForm(vendor)"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-danger mx-1" (click)="deleteVendor(vendor)"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
             </tbody>
         </table>

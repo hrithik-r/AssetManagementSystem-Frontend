@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AssetModule } from '../app/asset/asset.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common'
+import { PurchaseModule } from '../app/purchase/purchase.module'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/auth.service';
 import { LoginComponent } from './login/login/login.component';
@@ -17,7 +18,7 @@ import { UserListComponent } from './login/user-list/user-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,,
     LoginComponent,
     RegisterComponent,
     UserListComponent
@@ -27,6 +28,12 @@ import { UserListComponent } from './login/user-list/user-list.component';
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
+<<<<<<< HEAD
+    FormsModule,
+    AssetModule
+=======
+    PurchaseModule
+>>>>>>> 51dc8e9caa50b1599675c9a818e6f5205a1e44e3,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
