@@ -14,7 +14,8 @@ const routes: Routes = [
   { path:'',redirectTo:'purchase',pathMatch:'full'},
   { path: 'vendor', component:  VendorComponent},
   { path: 'vendorlist', component:  VendorlistComponent},
-  { path:'purchase', component:PurchaselistingComponent}
+  { path:'purchase', component:PurchaselistingComponent},
+  { path:'admin', component:AdminComponent}
 ];
 
 @NgModule({

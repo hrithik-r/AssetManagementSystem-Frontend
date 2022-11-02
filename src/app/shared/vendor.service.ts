@@ -31,10 +31,11 @@ export class VendorService {
     .toPromise()
     .then(
       (response) => {
+        console.log("in service");
+        
         console.log(response);
         this.vendors = response as Vendor[];
-        this.totalVendors = this.vendors.length;
-        this.sortVendorData();
+        // this.sortVendorData();
         // console.log("sorted vendors");
         
         // console.log(this.sortedVendors);
@@ -49,6 +50,8 @@ export class VendorService {
     .then(
       (response) => {
         this.sortedVendors = response as Vendor[];
+        
+        this.totalVendors = this.sortedVendors.length;
         this.sortVendorData();
         this.sortedVendors = this.sortedVendors.slice(0,5);
       }
@@ -88,11 +91,13 @@ export class VendorService {
     return this.httpClient.put(environment.apiVendor, vendor);
   }
 
-  deleteVendor(vendorId : number) : Observable<any>{
+  deleteVendor(vendorId : number){
     console.log(vendorId);
     console.log(environment.apiVendor + 'delete/' + vendorId);
     
-    return this.httpClient.delete('http://localhost:9001/api/vendor/delete/' + vendorId);
+    this.httpClient.delete('http://localhost:9001/api/vendor/delete/' + vendorId);
+    console.log("deleted");
+    
   }
 
 
