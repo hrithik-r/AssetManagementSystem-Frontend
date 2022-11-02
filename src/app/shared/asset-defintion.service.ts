@@ -56,7 +56,7 @@ export class AssetDefintionService {
   editUser(asset: AssetDefinition): Observable<any>{    
     console.log(asset.assetDefinitionId);
     console.log("Put")
-    return this.httpClient.put(environment.apiHrithik + 'users/update', asset)
+    return this.httpClient.put(environment.apiHrithik + 'asset-defintion/update', asset)
   }
 
   //5 delete user
@@ -64,11 +64,11 @@ export class AssetDefintionService {
     console.log(asset.assetDefinitionId);
     var userWish = window.confirm("Do you want to permanently delete the asset?")
     if(userWish == true){
-      return this.httpClient.delete(environment.apiHrithik + 'users/delete/' + user.userId)
+      return this.httpClient.delete(environment.apiHrithik + 'asset-defintion/delete/' + asset.assetDefinitionId)
     }
     else{
-      user.isActive = false
-      return this.httpClient.put(environment.apiHrithik + 'users/update', user)
+      asset.isActive = false
+      return this.httpClient.put(environment.apiHrithik + 'asset-defintion/update', asset)
     }
   }
 }
