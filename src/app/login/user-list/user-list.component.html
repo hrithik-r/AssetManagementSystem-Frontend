@@ -1,0 +1,49 @@
+<div class="header">
+    <div class="list-row mb-3">
+        <input type="text" class="form-control" placeholder="Search here" [(ngModel)]="filterString">
+    </div>
+</div>
+<div style="overflow-x: scroll;">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>User ID</th>    
+                <th>Username</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Role</th>
+                <th>IsActive</th>
+                <th>Edit(E)/Delete(X)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of this.userService.users | filter: filterString | paginate: {itemsPerPage: 4, currentPage: page}">
+                <td>{{user.userId}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.phoneNumber}}</td>
+                <td>{{user.role.roleType}}</td>
+                <td>{{user.isActive}}</td>
+                <td>
+                    <button class="btn btn-warning" (click)="updateUser(user.userId); populateForm(user)">E</button>&nbsp;
+                    <!-- populateForm(employee) -->
+                    <button class="btn btn-danger" (click)="deleteUser(user)">X</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    
+    <div class="footer">
+        <pagination-controls (pageChange)="page = ($event)"></pagination-controls>
+    </div>
