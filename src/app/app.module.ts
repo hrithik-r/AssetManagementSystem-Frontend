@@ -28,7 +28,6 @@ import { UserListComponent } from './login/user-list/user-list.component';
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-<<<<<<< HEAD
     FormsModule,
     AssetModule
 =======
