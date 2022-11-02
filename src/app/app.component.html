@@ -1,1 +1,25 @@
-<router-outlet></router-outlet>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark rounded justify-content-between">
+                <a class="navbar-brand" style="margin-left: 25px;">Asset Management System - IB1</a>
+                <form class="form-inline">
+                    <ng-container *ngIf="authService.isLoggedIn()">
+                        <button class="btn btn-outline-danger" style="margin-right: 25px;" routerLink="/login" (click)="authService.logOut()">Logout</button>
+                    </ng-container>
+                </form>
+            </nav>
+            <hr>
+            <div class="container">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <span>All Rights Reserved <i class="fa fa-copyright" aria-hidden="true"></i> 2022
+            <a href="https://nissan.co.jp">IB1 Team</a>
+        </span>
+    </div>
+</div>

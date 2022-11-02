@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #FAFFFD;
+    font-family: 'Open Sans', sans-serif;
+}
+.container{
+    max-width: 50%;
+    background: #A6D9F7;
+    border-radius: 10px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+.container tr{
+    align-items: center;
+}
+#username{
+    border-radius: 4px;
+}
+#password{
+    border-radius: 4px;
+}
+.required{
+    color: red;
+}
+#elmUsernameError{
+    color: red;
+}
+#elmPasswordError{
+    color: red;
+}
+#elmTypeError{
+    color: red;
+}
+#elmAttempts{
+    color: red;
+    font-weight: bold;
+}
+.btn-outline-dark:hover{
+    background-color: #198754;
+}

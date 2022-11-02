@@ -1,0 +1,32 @@
+<div class="header">
+    <h2 align="center">Login Page</h2>
+</div>
+<div class="container">   
+    <form [formGroup]="loginForm" (ngSubmit)="loginCredentials()" class="form text-center">
+        <div class="col pt-3">
+            <input type="text" placeholder="Enter Username" class="form-control" formControlName="username" autocomplete="off" required>
+        </div>
+        <!-- Username validation -->
+        <div *ngIf="isSubmitted && formControls.username.errors">
+            <div *ngIf="formControls.username.errors.required" style="color: red;">
+                Username is required!
+            </div>
+        </div>
+        <div class="col pt-3">
+            <input type="password" class="form-control" placeholder="Enter password" formControlName="password" autocomplete="off" required>
+        </div>
+        <!-- Password validation -->
+        <div *ngIf="isSubmitted && formControls.password.errors">
+            <div *ngIf="formControls.password.errors.required" style="color: red;">
+                Password is required!
+            </div>
+        </div>
+        <!-- submit -->
+        <div>
+            <button class="btn btn-md btn-outline-dark mt-3" (click)="loginCredentials()">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+        </div>
+        <br>
+        <!-- displaying error -->
+        <div *ngIf="error" style="color: red;">{{error}}</div>
+    </form>
+</div>
