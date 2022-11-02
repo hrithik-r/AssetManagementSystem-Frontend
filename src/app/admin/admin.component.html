@@ -19,7 +19,7 @@
                 <div class="card text-dark shadow bg-light mb-3 mx-2">
                     <div class="card-header text-center"><i class="fa-solid fa-sack-dollar"></i></div>
                     <div class="card-body">
-                        <!-- <h3 class="card-text text-center">{{this.requestService.totalLoan}}</h3> -->
+                        <h3 class="card-text text-center">{{this.assetcreateService.totalAssets}}</h3>
                     <p class="card-title text-center">Total Assets</p>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="card text-dark shadow bg-light mb-3 mx-2">
                     <div class="card-header text-center"><i class="fa-solid fa-cart-shopping"></i></div>
                     <div class="card-body">
-                        <h3 class="card-text text-center">100</h3>
+                        <h3 class="card-text text-center">{{this.purchaseService.totalPurchase}}</h3>
                     <p class="card-title text-center">Total Purchased Orders</p>
                     </div>
                 </div>
@@ -127,24 +127,26 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Vendor Name</th>
-                        <th>Vendor Type</th>
+                        <th>Order id</th>
+                        <th>Purchase Order No</th>
                         <th>Asset Type</th>
-                        <th>Valid From</th>
-                        <th>Valid To</th>
-                        <th>Address</th>
+                        <th>Quantity</th>            
+                        <th>Vendor Name</th>            
+                        <th>Valid From</th> 
+                        <th>Valid To</th> 
+                        <th>Order Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let vendor of this.vendorService.vendors">
-                        <td>{{vendor.vendorId}}</td>
-                        <td>{{vendor.vendorName}}</td>
-                        <td>{{vendor.vendorType.vendorTypeName}}</td>
-                        <td>{{vendor.assetType.assetTypeName}}</td>
-                        <td>{{vendor.validFrom}}</td>
-                        <td>{{vendor.validTo}}</td>
-                        <td>{{vendor.address}}</td>
+                    <tr *ngFor="let purchase of this.purchaseService.sortedPurchase">
+                        <td>{{purchase.pdId}}</td>
+                        <td>{{purchase.pdOrderNo}}</td>
+                        <td>{{purchase.assetType.assetTypeName}}</td>
+                        <td>{{purchase.pdQty}}</td>
+                        <td>{{purchase.vendor.vendorName}}</td>
+                        <td>{{purchase.orderDate}}</td>
+                        <td>{{purchase.deliveryDate}}</td>
+                        <td>{{purchase.status}}</td>
                         
                     </tr>
                 </tbody>
