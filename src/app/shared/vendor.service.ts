@@ -4,17 +4,25 @@ import { Vendor } from './vendor';
 import { VendorType } from './vendor-type';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VendorService {
 
+  formVendorData : Vendor = new Vendor;
+
   assetTypes : AssetType[];
 
   vendors : Vendor[];
 
   vendorTypes : VendorType[];
+
+  totalVendors : number = 0;
+
+  sortedVendors : Vendor[];
+
 
   constructor(private httpClient : HttpClient) { }
 
@@ -25,6 +33,24 @@ export class VendorService {
       (response) => {
         console.log(response);
         this.vendors = response as Vendor[];
+        this.totalVendors = this.vendors.length;
+        this.sortVendorData();
+        // console.log("sorted vendors");
+        
+        // console.log(this.sortedVendors);
+        
+      }
+    );
+  }
+
+  bindAllSortedVendors(){
+    this.httpClient.get(environment.apiVendor)
+    .toPromise()
+    .then(
+      (response) => {
+        this.sortedVendors = response as Vendor[];
+        this.sortVendorData();
+        this.sortedVendors = this.sortedVendors.slice(0,5);
       }
     );
   }
@@ -52,6 +78,23 @@ export class VendorService {
   }
   
 
+  addVendor(vendor : Vendor) : Observable<any>{
+    return this.httpClient.post(environment.apiVendor , vendor);
+  }
 
+  updateVendor(vendor : Vendor) : Observable<any>{
+    return this.httpClient.put(environment.apiVendor, vendor);
+  }
+
+  deleteVendor(vendorId : number) : Observable<any>{
+    return this.httpClient.delete(environment.apiVendor + 'delete/' + vendorId);
+  }
+
+
+  sortVendorData() {
+    this.sortedVendors = this.sortedVendors.sort((a, b) => {
+      return <any>new Date(b.createdTime) - <any>new Date(a.createdTime);
+    });
+  }
 
 }
