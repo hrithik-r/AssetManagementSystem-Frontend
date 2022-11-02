@@ -7,7 +7,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
-  declarations: [PurchaseentryComponent, PurchaselistingComponent],
+  declarations: [
+    PurchaseentryComponent, 
+    PurchaselistingComponent],
   imports: [
     CommonModule,
     BrowserModule,

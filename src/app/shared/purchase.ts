@@ -1,5 +1,6 @@
 import { AssetType } from "./asset-type";
 import { Vendor } from "./vendor";
+import { AssetDefinition } from "./asset-definition"
 
 export class Purchase {
     pdId:number;
@@ -12,6 +13,6 @@ export class Purchase {
     deliveryDate: Date;
     pdStatus: String;
     assetType: AssetType;
-    assetDefinition: object;
+    assetDefinition: AssetDefinition;
     vendor: Vendor;
 }

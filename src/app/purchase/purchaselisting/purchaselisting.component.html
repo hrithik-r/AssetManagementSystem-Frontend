@@ -7,28 +7,25 @@
         <thead>
           <tr>
             <th scope="col">Order id</th>
-            <th scope="col">Order No</th>
+            <th scope="col">Purchase Order No</th>
             <th scope="col">Asset Type</th>
             <th scope="col">Quantity</th>            
             <th scope="col">Vendor Name</th>            
-            <th scope="col">Vendor Type</th>            
-            <th scope="col">Asset Type</th> 
             <th scope="col">Valid From</th> 
             <th scope="col">Valid To</th> 
-            <th scope="col">Address</th> 
+            <th scope="col">Order Status</th> 
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let purchase of purchaseService.purchases">
-            <td scope="row">1</td>
-            <td scope="row">1</td>
-            <td scope="row">1</td>
-            <td scope="row">1</td>
-            <td scope="row">1</td>
-            <td scope="row">1</td>
-            <td scope="row">1</td>
-            <td scope="row">1</td>
-            <td scope="row">1</td>
+            <td scope="row">{{purchase.pdId}}</td>
+            <td scope="row">{{purchase.pdOrderNo}}</td>
+            <td scope="row">{{purchase.assetType.assetTypeName}}</td>
+            <td scope="row">{{purchase.pdQty}}</td>
+            <td scope="row">{{purchase.vendor.vendorName}}</td>
+            <td scope="row">{{purchase.orderDate}}</td>
+            <td scope="row">{{purchase.deliveryDate}}</td>
+            <td scope="row">{{purchase.status}}</td>
           </tr>
         </tbody>
       </table>

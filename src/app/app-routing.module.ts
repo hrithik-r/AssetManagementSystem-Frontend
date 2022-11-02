@@ -10,12 +10,11 @@ import { AdminComponent } from 'src/app/admin/admin.component'
 
 import {AssetCreationComponent} from  './asset/asset-creation/asset-creation.component'
 
-
-
 const routes: Routes = [
   { path:'',redirectTo:'purchase',pathMatch:'full'},
   { path: 'vendor', component:  VendorComponent},
   { path: 'vendorlist', component:  VendorlistComponent},
+  { path:'purchase', component:PurchaselistingComponent}
 ];
 
 @NgModule({
